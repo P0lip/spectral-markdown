@@ -1,0 +1,42 @@
+{
+  "parserOptions": {
+    "ecmaVersion": 2019,
+    "sourceType": "module"
+  },
+  "extends": ["airbnb-base", "plugin:prettier/recommended"],
+  "rules": {
+    "func-names": "off",
+    "no-param-reassign": "warn",
+    "no-restricted-syntax": "off",
+    "function-paren-newline": "off",
+    "import/no-dynamic-require": "warn",
+    "import/prefer-default-export": "off",
+    "import/extensions": ["error", "ignorePackages"],
+    "global-require": "warn",
+    "no-continue": "off",
+    "no-labels": "off",
+    "no-label-var": "off",
+    "no-void": "off",
+    "no-plusplus": "off",
+    "prettier/prettier": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/__tests__/**"],
+      "parserOptions": {
+        "ecmaVersion": 2019,
+        "sourceType": "module"
+      },
+      "env": {
+        "mocha": true
+      },
+      "plugins": [
+        "chai-friendly"
+      ],
+      "rules": {
+        "no-unused-expressions": 0,
+        "chai-friendly/no-unused-expressions": 2
+      }
+    }
+  ]
+}

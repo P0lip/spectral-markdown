@@ -1,0 +1,57 @@
+{
+  "name": "spectral-markdown",
+  "description": "Spectral markdown ruleset",
+  "homepage": "https://github.com/p0lip/spectral-markdown",
+  "author": "P0lip",
+  "engines": {
+    "node": ">=8"
+  },
+  "version": "0.0.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/p0lip/spectral-markdown"
+  },
+  "main": "./dist/index.json",
+  "license": "MIT",
+  "scripts": {
+    "build": "cross-env NODE_ENV=production rollup -c",
+    "postbuild": "node -r esm ./scripts/generate-ruleset.js",
+    "lint": "eslint --cache --cache-location .cache/ src/",
+    "test": "cross-env NODE_ENV=test mocha-parallel-tests --recursive --opts mocha.opts src/**/__tests__/**/*.test.js",
+    "test:coverage": "nyc npm run test",
+    "prepublish": "npm run lint && npm run test && npm run build"
+  },
+  "devDependencies": {
+    "@babel/core": "7.4.4",
+    "@babel/preset-env": "7.4.4",
+    "@stoplight/spectral": "^4.1.0-beta3",
+    "babel-eslint": "10.0.1",
+    "babel-plugin-istanbul": "5.1.4",
+    "chai": "4.2.0",
+    "chai-as-promised": "7.1.1",
+    "cross-env": "^5.2.0",
+    "eslint": "5.16.0",
+    "eslint-config-airbnb-base": "^13.1.0",
+    "eslint-config-prettier": "4.2.0",
+    "eslint-plugin-chai-friendly": "0.4.1",
+    "eslint-plugin-import": "^2.17.2",
+    "eslint-plugin-prettier": "3.0.1",
+    "esm": "3.2.22",
+    "husky": "2.2.0",
+    "it-each": "0.4.0",
+    "mocha": "6.1.4",
+    "mocha-parallel-tests": "2.1.0",
+    "nyc": "14.1.0",
+    "prettier": "1.17.0",
+    "rollup": "^1.11.3",
+    "rollup-plugin-babel": "4.3.2",
+    "rollup-plugin-cjs-es": "^0.9.0",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-terser": "^5.1.1"
+  },
+  "dependencies": {
+    "@stoplight/markdown": "^2.5.0",
+    "js-yaml": "^3.13.1"
+  }
+}

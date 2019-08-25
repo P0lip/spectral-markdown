@@ -1,0 +1,6 @@
+{
+  "formats": ["markdown"],
+  "functions": ["markdown"],
+  "functionsDir": ".",
+  "rules": {}
+}

@@ -1,0 +1,19 @@
+{
+  "check-coverage": true,
+  "per-file": true,
+  "include": [
+    "src/**/*.js"
+  ],
+  "exclude": [
+    "**/__/tests__/**/"
+  ],
+  "reporter": [
+    "text-summary"
+  ],
+  "require": [
+    "@babel/register",
+    "@babel/polyfill"
+  ],
+  "instrument": false,
+  "sourceMap": false
+}
